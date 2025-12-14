@@ -214,7 +214,7 @@ export const deletePost = async (req: AuthFileRequest, res: Response) => {
   }
 };
 
-
+   
 export const editPost = async (req: AuthFileRequest, res: Response) => {
   try {
     const userId = req.user?.id;
@@ -365,4 +365,4 @@ export const editPost = async (req: AuthFileRequest, res: Response) => {
     }
     return res.status(500).json({ message: 'Failed to update post', error: err?.message ?? String(err) });
   }
-};
+};                     

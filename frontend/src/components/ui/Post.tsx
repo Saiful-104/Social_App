@@ -262,10 +262,18 @@ const Post = ({ post, refetch }: PostProps) => {
               <h4 className="_feed_inner_timeline_post_box_title">
                 {post.author.firstName} {post.author.lastName}
               </h4>
-              <p className="_feed_inner_timeline_post_box_para">
+              {/* <p className="_feed_inner_timeline_post_box_para">
                 {getTimeAgo(post.createdAt)} . 
                 <Link to="/">Public</Link>
-              </p>
+              </p> */}
+              <p className="_feed_inner_timeline_post_box_para">
+  {getTimeAgo(post.createdAt)} . 
+  <span>
+    {post.isPrivate === true || post.isPrivate === "true" ? "Only me" : "Public"}
+  </span>
+</p>
+
+
             </div>
           </div>
           <div className="relative inline-block">
